@@ -55,43 +55,38 @@ function atrium_filter_default_formats() {
     ),
   );
 
-  // Exported format: Markdown
-  $formats['Markdown'] = array(
-    'name' => 'Markdown',
-    'roles' => array(
-      '0' => 'administrator',
-      '1' => 'anonymous user',
-      '2' => 'authenticated user',
-      '3' => 'manager',
+// Exported format: Filtered HTML
+$formats['Filtered HTML'] = array(
+  'name' => 'Filtered HTML',
+  'roles' => array(
+    '0' => 'anonymous user',
+    '1' => 'authenticated user',
+    '2' => 'administrator',
+    '3' => 'manager',
+  ),
+  'filters' => array(
+    '0' => array(
+      'module' => 'filter',
+      'delta' => '2',
+      'weight' => '-9',
     ),
-    'filters' => array(
-      '0' => array(
-        'module' => 'markdown',
-        'delta' => '0',
-        'weight' => '-10',
-      ),
-      '1' => array(
-        'module' => 'filter',
-        'delta' => '2',
-        'weight' => '-9',
-      ),
-      '2' => array(
-        'module' => 'filter',
-        'delta' => '0',
-        'weight' => '-8',
-      ),
-      '3' => array(
-        'module' => 'codefilter',
-        'delta' => '0',
-        'weight' => '-7',
-      ),
-      '4' => array(
-        'module' => 'filter',
-        'delta' => '3',
-        'weight' => '-6',
-      ),
+    '1' => array(
+      'module' => 'filter',
+      'delta' => '0',
+      'weight' => '-8',
     ),
-  );
+    '2' => array(
+      'module' => 'codefilter',
+      'delta' => '0',
+      'weight' => '-7',
+    ),
+    '3' => array(
+      'module' => 'filter',
+      'delta' => '3',
+      'weight' => '-6',
+    ),
+  ),
+);
 
   return $formats;
 }

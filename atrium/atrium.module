@@ -681,3 +681,13 @@ function atrium_search_form_submit($form, &$form_state) {
   $search = $form_state['values']['search'];
   drupal_goto('search', array('keys' => $search));
 }
+
+/**
+ * Implementation of hook_wysiwyg_editor_settings_alter().
+ */
+function atrium_wysiwyg_editor_settings_alter(&$settings, $context) {
+  // Restrict height of text area to 160 on comment textareas but not on node textareas.
+  if ($context['profile']->editor == 'ckeditor' && arg(1) != "add") {
+    $settings['height'] = 160;
+  }
+}
