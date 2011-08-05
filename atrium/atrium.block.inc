@@ -151,7 +151,79 @@ function _atrium_block_create() {
       $links["{$type}"] = $menu_item;
     }
   }
-  ksort($links);
+  $query = "SELECT nid FROM node where type = 'group'";
+  $result = db_query($query);
+  $unset_links = false;
+  $arg = arg(0);
+  if ($arg != 'admin'){
+    $unset_links = true;
+    $unset_quiz = true;
+    $unset_polls = true;
+  }
+  while ($current_node = db_fetch_array($result)){
+    $node = node_load($current_node['nid']);
+    //Check if this page is page this group
+    if (strstr(str_replace('/','',$_SERVER['REQUEST_URI']), $node->purl)){
+      $value = db_fetch_array(db_query("SELECT value FROM {spaces_overrides} WHERE id = %d AND object_id = '%s'",$current_node['nid'], 'spaces_features'));
+      if ($value){
+        $spaces_features = unserialize($value['value']);
+
+        if($spaces_features['lc_quiz']){
+          $unset_quiz = false;
+        }
+        else {
+          $unset_quiz = true;
+        }
+
+//    if (strstr(str_replace('/','',$_SERVER['REQUEST_URI']), $node->purl)){
+//       $unset_links = false;
+        if($spaces_features['polls']){
+          $unset_polls = false;
+        }
+        else {
+          $unset_polls = true;
+        }
+      }
+      else if($node->og_private){
+        $name = 'atrium_groups_private';
+      }
+      else {
+        $name = 'atrium_groups_public';
+      }
+      if ($name){
+        $val = db_fetch_array(db_query("SELECT value FROM {spaces_presets} WHERE name = '%s'", $name));
+      }
+      if ($val){
+        $spaces_features = unserialize($val['value']);
+        if($spaces_features['variable']['spaces_features']['lc_quiz']){
+          $unset_quiz = false;
+        }
+        else {
+          $unset_quiz = true;
+        }
+
+        if($spaces_features['variable']['spaces_features']['polls']){
+          $unset_polls = false;
+        }
+        else {
+          $unset_polls = true;
+        }
+      }
+       //$unset_links = false;
+    }
+  }
+  if ($unset_links){
+    if($unset_quiz){
+      drupal_add_js(drupal_get_path('module', 'atrium') . '/atrium.js');
+      unset($links['quiz']);
+    }
+
+    if($unset_polls){
+      drupal_add_js(drupal_get_path('module', 'atrium') . '/atrium_remove_poll.js');
+      unset($links['poll']);
+    }
+  }
+   ksort($links);
   return array('subject' => "<span class='icon'></span> {$item['title']}", 'content' => theme('links', $links));
 }
 
