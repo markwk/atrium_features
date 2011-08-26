@@ -77,6 +77,14 @@ function atrium_calendar_user_default_permissions() {
     ),
   );
 
+  // Exported permission: edit field_date
+  $permissions['edit field_date'] = array(
+    'name' => 'edit field_date',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
   // Exported permission: edit own event content
   $permissions['edit own event content'] = array(
     'name' => 'edit own event content',
@@ -84,6 +92,15 @@ function atrium_calendar_user_default_permissions() {
       '0' => 'administrator',
       '1' => 'authenticated user',
       '2' => 'manager',
+    ),
+  );
+
+  // Exported permission: view field_date
+  $permissions['view field_date'] = array(
+    'name' => 'view field_date',
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
     ),
   );
 

@@ -10,7 +10,7 @@ function _atrium_block_welcome_admin() {
 
     // Video.
     // Set "wmode" to prevent z-index issues. see http://kb2.adobe.com/cps/155/tn_15523.html
-    $video = '<embed wmode="opaque" src="http://blip.tv/play/hZ4ygcbWBwA" type="application/x-shockwave-flash" width="560" height="345" allowscriptaccess="always" allowfullscreen="true"></embed>';
+    $video = '<embed src="http://player.youku.com/player.php/sid/XMjQ3OTcxOTI4/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>';
 
     // Build links.
     $links = array();
@@ -63,7 +63,7 @@ function _atrium_block_welcome_member() {
 
     // Video.
     // Set "wmode" to prevent z-index issues. see http://kb2.adobe.com/cps/155/tn_15523.html
-    $video = '<embed wmode="opaque" src="http://blip.tv/play/hZ4ygcbWJgA" type="application/x-shockwave-flash" width="560" height="345" allowscriptaccess="always" allowfullscreen="true"></embed>';
+    $video = '<embed src="http://player.youku.com/player.php/sid/XMjQ3OTcxOTI4/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>';
 
     // Build links.
     $links = array();

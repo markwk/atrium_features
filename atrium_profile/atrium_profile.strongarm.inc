@@ -9,16 +9,79 @@ function atrium_profile_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_profile';
+  $strongarm->value = '[field_name_person_first-raw] [field_name_person_last-raw]';
+  $export['ant_pattern_profile'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'atrium_activity_update_type_profile';
-  $strongarm->value = FALSE;
+  $strongarm->value = 0;
   $export['atrium_activity_update_type_profile'] = $strongarm;
 
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_profile';
+  $strongarm->name = 'comment_anonymous_profile';
   $strongarm->value = 0;
+  $export['comment_anonymous_profile'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_controls_profile';
+  $strongarm->value = '3';
+  $export['comment_controls_profile'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_profile';
+  $strongarm->value = '4';
+  $export['comment_default_mode_profile'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_order_profile';
+  $strongarm->value = '1';
+  $export['comment_default_order_profile'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_profile';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_profile'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_profile';
+  $strongarm->value = '0';
+  $export['comment_form_location_profile'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_profile';
+  $strongarm->value = '1';
+  $export['comment_preview_profile'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_profile';
+  $strongarm->value = '0';
   $export['comment_profile'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_profile';
+  $strongarm->value = '1';
+  $export['comment_subject_field_profile'] = $strongarm;
 
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -26,13 +89,12 @@ function atrium_profile_strongarm() {
   $strongarm->name = 'content_extra_weights_profile';
   $strongarm->value = array(
     'title' => '-5',
-    'revision_information' => '0',
-    'author' => '1',
-    'options' => '2',
-    'comment_settings' => '3',
+    'revision_information' => '8',
+    'author' => '7',
+    'options' => '9',
+    'comment_settings' => '10',
     'menu' => '-4',
-    'taxonomy' => '11',
-    'book' => '-1',
+    'book' => '6',
   );
   $export['content_extra_weights_profile'] = $strongarm;
 
@@ -72,7 +134,7 @@ function atrium_profile_strongarm() {
     ),
     'menu' => array(
       'region' => 'right',
-      'weight' => '5',
+      'weight' => '1',
       'has_required' => FALSE,
       'title' => 'Menu settings',
       'collapsed' => 1,
@@ -80,7 +142,7 @@ function atrium_profile_strongarm() {
     ),
     'revision_information' => array(
       'region' => 'right',
-      'weight' => '7',
+      'weight' => '3',
       'has_required' => FALSE,
       'title' => 'Revision information',
       'collapsed' => 1,
@@ -88,7 +150,7 @@ function atrium_profile_strongarm() {
     ),
     'comment_settings' => array(
       'region' => 'right',
-      'weight' => '9',
+      'weight' => '5',
       'has_required' => FALSE,
       'title' => 'Comment settings',
       'collapsed' => 1,
@@ -96,7 +158,7 @@ function atrium_profile_strongarm() {
     ),
     'options' => array(
       'region' => 'right',
-      'weight' => '8',
+      'weight' => '4',
       'has_required' => FALSE,
       'title' => 'Publishing options',
       'collapsed' => 1,
@@ -104,7 +166,7 @@ function atrium_profile_strongarm() {
     ),
     'author' => array(
       'region' => 'right',
-      'weight' => '6',
+      'weight' => '2',
       'has_required' => FALSE,
       'title' => 'Authoring information',
       'collapsed' => 1,
@@ -112,14 +174,14 @@ function atrium_profile_strongarm() {
     ),
     'buttons' => array(
       'region' => 'main',
-      'weight' => '13',
+      'weight' => '11',
       'has_required' => FALSE,
       'title' => NULL,
       'hidden' => 0,
     ),
     'book' => array(
       'region' => 'right',
-      'weight' => '4',
+      'weight' => '0',
       'has_required' => FALSE,
       'title' => 'Book outline',
       'collapsed' => 1,
@@ -127,119 +189,72 @@ function atrium_profile_strongarm() {
     ),
     'field_profile_organization' => array(
       'region' => 'main',
-      'weight' => '4',
+      'weight' => '3',
       'has_required' => FALSE,
-      'title' => 'Organization',
+      'title' => 'Organization / School',
       'hidden' => 0,
     ),
     'field_profile_url' => array(
       'region' => 'main',
-      'weight' => '8',
+      'weight' => '6',
       'has_required' => FALSE,
-      'title' => 'Blog / URL',
+      'title' => 'URL',
       'hidden' => 0,
     ),
-    'field_name_first' => array(
+    'field_name_person_first' => array(
       'region' => 'main',
       'weight' => '1',
-      'has_required' => TRUE,
+      'has_required' => FALSE,
       'title' => 'First Name',
+      'hidden' => 0,
     ),
-    'field_name_last' => array(
+    'field_name_person_last' => array(
       'region' => 'main',
       'weight' => '2',
-      'has_required' => TRUE,
-      'title' => 'Last Name (Family Name)',
+      'has_required' => FALSE,
+      'title' => 'Last Name',
+      'hidden' => 0,
     ),
-    'field_name_eng' => array(
+    'field_location_city' => array(
       'region' => 'main',
-      'weight' => '3',
+      'weight' => '4',
       'has_required' => FALSE,
-      'title' => 'English Name',
+      'title' => 'City',
       'hidden' => 0,
     ),
-    'field_location_simple' => array(
-      'region' => 'right',
-      'weight' => '0',
-      'has_required' => FALSE,
-      'title' => 'Location',
-      'hidden' => 0,
-    ),
-    'field_nationality' => array(
-      'region' => 'right',
-      'weight' => '1',
-      'has_required' => FALSE,
-      'title' => 'Nationality',
-      'hidden' => 0,
-    ),
-    'field_lang_fluent' => array(
-      'region' => 'right',
-      'weight' => '2',
-      'has_required' => FALSE,
-      'title' => 'Fluent Languages',
-      'hidden' => 0,
-    ),
-    'attachments' => array(
-      'region' => 'main',
-      'weight' => '14',
-      'has_required' => FALSE,
-      'title' => NULL,
-      'hidden' => 0,
-    ),
-    'field_lang_study' => array(
-      'region' => 'right',
-      'weight' => '3',
-      'has_required' => FALSE,
-      'title' => 'Languages I am studying',
-      'hidden' => 0,
-    ),
-    'taxonomy' => array(
+    'field_location_country' => array(
       'region' => 'main',
       'weight' => '5',
       'has_required' => FALSE,
-      'title' => NULL,
-      'hidden' => 0,
-    ),
-    'field_stud_id' => array(
-      'region' => 'main',
-      'weight' => '6',
-      'has_required' => FALSE,
-      'title' => 'Student ID',
-      'hidden' => 0,
-    ),
-    'field_bio' => array(
-      'region' => 'main',
-      'weight' => '7',
-      'has_required' => FALSE,
-      'title' => 'Bio',
+      'title' => 'Country',
       'hidden' => 0,
     ),
     'field_twitter' => array(
       'region' => 'main',
-      'weight' => '9',
+      'weight' => '7',
       'has_required' => FALSE,
       'title' => 'Twitter',
       'hidden' => 0,
     ),
-    'field_facebook' => array(
+    'field_social_connect' => array(
+      'region' => 'main',
+      'weight' => '8',
+      'has_required' => FALSE,
+      'title' => 'Weibo / Google+ / LinkedIn',
+      'hidden' => 0,
+    ),
+    'field_birth_date' => array(
+      'region' => 'main',
+      'weight' => '9',
+      'has_required' => FALSE,
+      'title' => 'Birth Date',
+      'hidden' => 0,
+    ),
+    'attachments' => array(
       'region' => 'main',
       'weight' => '10',
       'has_required' => FALSE,
-      'title' => 'Facebook',
-      'hidden' => 0,
-    ),
-    'field_weibo' => array(
-      'region' => 'main',
-      'weight' => '12',
-      'has_required' => FALSE,
-      'title' => 'Weibo',
-      'hidden' => 0,
-    ),
-    'field_social_site' => array(
-      'region' => 'main',
-      'weight' => '11',
-      'has_required' => FALSE,
-      'title' => 'Other Social Site',
+      'title' => NULL,
       'hidden' => 0,
     ),
   );
@@ -256,14 +271,14 @@ function atrium_profile_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'show_diff_inline_profile';
-  $strongarm->value = FALSE;
+  $strongarm->value = 0;
   $export['show_diff_inline_profile'] = $strongarm;
 
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'show_preview_changes_profile';
-  $strongarm->value = FALSE;
+  $strongarm->value = 0;
   $export['show_preview_changes_profile'] = $strongarm;
 
   $strongarm = new stdClass;

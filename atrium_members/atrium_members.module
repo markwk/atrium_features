@@ -80,12 +80,14 @@ function atrium_members_menu_alter(&$items) {
     $items['user/%user_category/edit/'. $category['name']] = $item;
   }
 
+/** Removed for Language Corner
   // Clone ucreate item into members/user-add.
   if (isset($items['user/add'])) {
     $items['members/add'] = $items['user/add'];
     $items['members/add']['type'] = MENU_LOCAL_TASK;
     $items['members/add']['weight'] = 10;
   }
+ */
 
   // Views: disable views that we are 'overriding'
   $views_defaults = variable_get('views_defaults', array());
@@ -128,6 +130,7 @@ function atrium_members_addform_access() {
 /**
  * Implementation of hook_context_links_alter().
  */
+/** Removed for Language Corner
 function atrium_members_context_links_alter(&$links) {
   if (context_get('context', 'members_directory') && module_exists('ucreate') && user_access('create users')) {
     $item = menu_get_item('members/add');
@@ -139,6 +142,7 @@ function atrium_members_context_links_alter(&$links) {
     }
   }
 }
+ */
 
 /**
  * Implementation of hook_context_page_condition().

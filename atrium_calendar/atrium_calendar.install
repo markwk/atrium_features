@@ -193,13 +193,13 @@ function _atrium_calendar_create_terms($vid = NULL, $new = FALSE) {
       'weight' => '0',
     ),
     array(
-      'name' => 'Milestone',
+      'name' => 'Activity',
       'description' => '',
       'vid' => $vid,
       'weight' => '0',
     ),
     array(
-      'name' => 'Deliverable',
+      'name' => 'Assignment',
       'description' => '',
       'vid' => $vid,
       'weight' => '0',

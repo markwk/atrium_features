@@ -70,7 +70,9 @@ function _atrium_form_spaces_features_form_alter(&$form, $form_state) {
         1 => t('Public access, open registration'),
         2 => t('Public access, moderated registration'),
       ),
-      '#default_value' => variable_get('user_register', 0),
+//      Modified for Public Access Site
+      '#default_value' => variable_get('user_register', 1),
+//      '#default_value' => variable_get('user_register', 0),
     );
     $form['atrium']['atrium_members'] = array(
       '#title' => t('Members'),
@@ -90,7 +92,9 @@ function _atrium_form_spaces_features_form_alter(&$form, $form_state) {
         ATRIUM_NOTIFICATIONS_TEAM => t('Small team: authors subscribe others to their posts'),
         ATRIUM_NOTIFICATIONS_SUBSCRIBE => t('Community: users subscribe to posts on their own')
       ),
-      '#default_value' => variable_get('atrium_notifications', ATRIUM_NOTIFICATIONS_TEAM),
+//      '#default_value' => variable_get('atrium_notifications', ATRIUM_NOTIFICATIONS_TEAM),
+      '#default_value' => variable_get('atrium_notifications', ATRIUM_NOTIFICATIONS_SUBSCRIBE),
+
     );
     $form['#submit'][] = 'atrium_form_spaces_features_form_submit';
   }
