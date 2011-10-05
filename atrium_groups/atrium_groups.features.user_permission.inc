@@ -11,7 +11,8 @@ function atrium_groups_user_default_permissions() {
     'name' => 'create group content',
     'roles' => array(
       '0' => 'administrator',
-      '1' => 'manager',
+      '1' => 'authenticated user',
+      '2' => 'manager',
     ),
   );
 

@@ -16,6 +16,13 @@ function atrium_profile_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ant_profile';
+  $strongarm->value = '1';
+  $export['ant_profile'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'atrium_activity_update_type_profile';
   $strongarm->value = 0;
   $export['atrium_activity_update_type_profile'] = $strongarm;
@@ -266,6 +273,35 @@ function atrium_profile_strongarm() {
   $strongarm->name = 'notifications_content_type_profile';
   $strongarm->value = array();
   $export['notifications_content_type_profile'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'openid_cp_field_map_profile';
+  $strongarm->value = array(
+    'http://axschema.org/contact/web/blog' => 'field_profile_url',
+    'http://axschema.org/company/name' => 'field_profile_organization',
+    'http://axschema.org/namePerson' => 'title',
+    'http://axschema.org/contact/city/home' => 'field_location_city',
+    'http://axschema.org/namePerson/first' => 'field_name_person_first',
+    'http://axschema.org/namePerson/last' => 'field_name_person_last',
+    'http://axschema.org/contact/country/home' => 'field_location_country',
+    'http://axschema.org/contact/IM/ICQ' => 'field_twitter',
+    'http://axschema.org/contact/IM/AIM' => 'field_social_connect',
+    'http://axschema.org/birthDate' => 'field_birth_date',
+  );
+  $export['openid_cp_field_map_profile'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'openid_profile_map';
+  $strongarm->value = array(
+    'http://axschema.org/namePerson/friendly' => 'name',
+    'http://axschema.org/contact/email' => 'mail',
+    'http://axschema.org/media/image/aspect11' => 'picture',
+  );
+  $export['openid_profile_map'] = $strongarm;
 
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

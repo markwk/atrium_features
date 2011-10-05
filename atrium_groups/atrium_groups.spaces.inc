@@ -102,10 +102,15 @@ function atrium_groups_spaces_presets() {
       'spaces_features' => array(
         'atrium_blog' => '1',
         'atrium_book' => '1',
-        'atrium_calendar' => '0',
-        'atrium_casetracker' => '0',
+        'atrium_calendar' => '1',
         'atrium_members' => '1',
+        'atrium_opentok' => '0',
         'atrium_shoutbox' => '0',
+        'atriumed_quizlet' => '0',
+        'elms_schedule' => '1',
+        'embed_video' => '0',
+        'imageboard' => '1',
+        'polls' => '0',
         'spaces_dashboard' => '1',
       ),
       'site_frontpage' => 'dashboard',
@@ -127,6 +132,10 @@ function atrium_groups_spaces_presets() {
         'shoutbox' => -16,
         'calendar' => -15,
         'members' => -14,
+      ),
+      'site_frontpage_path' => 'dashboard',
+      'designkit_image' => array(
+        'logo' => 0,
       ),
     ),
     'context' => array(

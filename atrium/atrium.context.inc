@@ -76,6 +76,12 @@ function atrium_context_default_contexts() {
           'region' => 'palette',
           'weight' => 2,
         ),
+        'notifications_ui-0' => array(
+          'module' => 'notifications_ui',
+          'delta' => '0',
+          'weight' => 48,
+          'region' => 'page_tools',
+        ),
       ),
     ),
   );

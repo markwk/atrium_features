@@ -167,8 +167,8 @@ function atrium_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'notifications_ui_account_options';
   $strongarm->value = array(
+    'links' => 'links',
     'block' => 'block',
-    'links' => 0,
   );
   $export['notifications_ui_account_options'] = $strongarm;
 
@@ -177,6 +177,8 @@ function atrium_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'notifications_ui_node';
   $strongarm->value = array(
+    'links' => 'links',
+    'teaserlinks' => 'teaserlinks',
     'block' => 'block',
   );
   $export['notifications_ui_node'] = $strongarm;
@@ -207,7 +209,6 @@ function atrium_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'notifications_ui_types';
   $strongarm->value = array(
-    'grouptype' => 'grouptype',
     'thread' => 'thread',
     'nodetype' => 'nodetype',
     'author' => 'author',
@@ -220,6 +221,7 @@ function atrium_strongarm() {
   $strongarm->name = 'notifications_ui_user';
   $strongarm->value = array(
     'page' => 'page',
+    'create' => 'create',
   );
   $export['notifications_ui_user'] = $strongarm;
 
@@ -295,7 +297,7 @@ function atrium_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_frontpage';
-  $strongarm->value = 'dashboard';
+  $strongarm->value = 'og';
   $export['site_frontpage'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -485,7 +487,7 @@ function atrium_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_register';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['user_register'] = $strongarm;
 
   $strongarm = new stdClass;

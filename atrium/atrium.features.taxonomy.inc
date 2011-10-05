@@ -7,9 +7,9 @@ function atrium_taxonomy_default_vocabularies() {
   return array(
     'keywords' => array(
       'name' => 'Keywords',
-      'description' => NULL,
+      'description' => '',
       'help' => 'Enter tags related to your post.',
-      'relations' => '0',
+      'relations' => '1',
       'hierarchy' => '0',
       'multiple' => '0',
       'required' => '0',
@@ -19,9 +19,10 @@ function atrium_taxonomy_default_vocabularies() {
       'nodes' => array(
         'blog' => 'blog',
         'book' => 'book',
-        'casetracker_basic_case' => 'casetracker_basic_case',
-        'casetracker_basic_project' => 'casetracker_basic_project',
+        'embed_video' => 'embed_video',
         'event' => 'event',
+        'image' => 'image',
+        'quizlet' => 'quizlet',
       ),
     ),
   );

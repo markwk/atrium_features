@@ -26,5 +26,10 @@ function atrium_user_default_roles() {
     'name' => 'manager',
   );
 
+  // Exported role: teacher
+  $roles['teacher'] = array(
+    'name' => 'teacher',
+  );
+
   return $roles;
 }

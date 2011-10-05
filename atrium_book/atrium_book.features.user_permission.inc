@@ -13,6 +13,7 @@ function atrium_book_user_default_permissions() {
       '0' => 'administrator',
       '1' => 'authenticated user',
       '2' => 'manager',
+      '3' => 'teacher',
     ),
   );
 
@@ -31,6 +32,7 @@ function atrium_book_user_default_permissions() {
       '0' => 'administrator',
       '1' => 'authenticated user',
       '2' => 'manager',
+      '3' => 'teacher',
     ),
   );
 
@@ -41,6 +43,7 @@ function atrium_book_user_default_permissions() {
       '0' => 'administrator',
       '1' => 'authenticated user',
       '2' => 'manager',
+      '3' => 'teacher',
     ),
   );
 
@@ -58,8 +61,8 @@ function atrium_book_user_default_permissions() {
     'name' => 'delete own book content',
     'roles' => array(
       '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '1' => 'manager',
+      '2' => 'teacher',
     ),
   );
 
@@ -70,6 +73,7 @@ function atrium_book_user_default_permissions() {
       '0' => 'administrator',
       '1' => 'authenticated user',
       '2' => 'manager',
+      '3' => 'teacher',
     ),
   );
 

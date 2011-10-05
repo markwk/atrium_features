@@ -9,6 +9,43 @@ function atrium_groups_context_default_contexts() {
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'enroll_group';
+  $context->description = '';
+  $context->tag = 'Groups';
+  $context->conditions = array(
+    'user' => array(
+      'values' => array(
+        'authenticated user' => 'authenticated user',
+      ),
+    ),
+    'views' => array(
+      'values' => array(
+        'groups_listing:page_2' => 'groups_listing:page_2',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'og_reg_keys-0' => array(
+          'module' => 'og_reg_keys',
+          'delta' => 0,
+          'region' => 'right',
+          'weight' => 0,
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Groups');
+  $export['enroll_group'] = $context;
+
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'groups_listing';
   $context->description = '';
   $context->tag = 'Groups';

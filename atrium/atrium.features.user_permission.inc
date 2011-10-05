@@ -18,7 +18,8 @@ function atrium_user_default_permissions() {
   $permissions['access comments'] = array(
     'name' => 'access comments',
     'roles' => array(
-      '0' => 'authenticated user',
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
     ),
   );
 
@@ -26,7 +27,8 @@ function atrium_user_default_permissions() {
   $permissions['access content'] = array(
     'name' => 'access content',
     'roles' => array(
-      '0' => 'authenticated user',
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
     ),
   );
 
@@ -34,7 +36,8 @@ function atrium_user_default_permissions() {
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
     'roles' => array(
-      '0' => 'authenticated user',
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
     ),
   );
 
@@ -144,6 +147,24 @@ function atrium_user_default_permissions() {
     ),
   );
 
+  // Exported permission: collapse format fieldset by default
+  $permissions['collapse format fieldset by default'] = array(
+    'name' => 'collapse format fieldset by default',
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: collapsible format selection
+  $permissions['collapsible format selection'] = array(
+    'name' => 'collapsible format selection',
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
+  );
+
   // Exported permission: post comments
   $permissions['post comments'] = array(
     'name' => 'post comments',
@@ -193,19 +214,45 @@ function atrium_user_default_permissions() {
     ),
   );
 
-  // Exported permission: skip notifications
-  $permissions['skip notifications'] = array(
-    'name' => 'skip notifications',
+  // Exported permission: show format selection for blocks
+  $permissions['show format selection for blocks'] = array(
+    'name' => 'show format selection for blocks',
     'roles' => array(
       '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
     ),
   );
 
-  // Exported permission: subscribe other users
-  $permissions['subscribe other users'] = array(
-    'name' => 'subscribe other users',
+  // Exported permission: show format selection for comments
+  $permissions['show format selection for comments'] = array(
+    'name' => 'show format selection for comments',
+    'roles' => array(
+      '0' => 'administrator',
+    ),
+  );
+
+  // Exported permission: show format selection for nodes
+  $permissions['show format selection for nodes'] = array(
+    'name' => 'show format selection for nodes',
+    'roles' => array(
+      '0' => 'administrator',
+    ),
+  );
+
+  // Exported permission: show format tips
+  $permissions['show format tips'] = array(
+    'name' => 'show format tips',
+    'roles' => array(),
+  );
+
+  // Exported permission: show more format tips link
+  $permissions['show more format tips link'] = array(
+    'name' => 'show more format tips link',
+    'roles' => array(),
+  );
+
+  // Exported permission: skip notifications
+  $permissions['skip notifications'] = array(
+    'name' => 'skip notifications',
     'roles' => array(
       '0' => 'administrator',
       '1' => 'authenticated user',
@@ -307,7 +354,8 @@ function atrium_user_default_permissions() {
   $permissions['view revisions'] = array(
     'name' => 'view revisions',
     'roles' => array(
-      '0' => 'authenticated user',
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
     ),
   );
 
@@ -326,7 +374,9 @@ function atrium_user_default_permissions() {
     'name' => 'view users outside groups',
     'roles' => array(
       '0' => 'administrator',
-      '1' => 'manager',
+      '1' => 'anonymous user',
+      '2' => 'authenticated user',
+      '3' => 'manager',
     ),
   );
 
