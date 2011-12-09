@@ -22,7 +22,6 @@ function atrium_taxonomy_default_vocabularies() {
         'embed_video' => 'embed_video',
         'event' => 'event',
         'image' => 'image',
-        'quizlet' => 'quizlet',
       ),
     ),
   );

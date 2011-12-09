@@ -63,6 +63,7 @@ function atrium_filter_default_formats() {
       '1' => 'anonymous user',
       '2' => 'authenticated user',
       '3' => 'manager',
+      '4' => 'teacher',
     ),
     'filters' => array(
       '0' => array(

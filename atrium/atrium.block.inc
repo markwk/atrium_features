@@ -10,11 +10,7 @@ function _atrium_block_welcome_admin() {
 
     // Video.
     // Set "wmode" to prevent z-index issues. see http://kb2.adobe.com/cps/155/tn_15523.html
-    $video = '<embed 
-src="http://player.youku.com/player.php/sid/XMzAxMjc3Mjgw/v.swf"
-allowFullScreen="true" quality="high" width="480" height="400"
-align="middle" allowScriptAccess="always"
-type="application/x-shockwave-flash"></embed>';
+    $video = '<embed wmode="opaque" src="http://blip.tv/play/hZ4ygcbWBwA" type="application/x-shockwave-flash" width="560" height="345" allowscriptaccess="always" allowfullscreen="true"></embed>';
 
     // Build links.
     $links = array();
@@ -67,11 +63,7 @@ function _atrium_block_welcome_member() {
 
     // Video.
     // Set "wmode" to prevent z-index issues. see http://kb2.adobe.com/cps/155/tn_15523.html
-    $video = '<embed
-src="http://player.youku.com/player.php/sid/XMzAxMjc3Mjgw/v.swf"
-allowFullScreen="true" quality="high" width="480" height="400"
-align="middle" allowScriptAccess="always"
-type="application/x-shockwave-flash"></embed>';
+    $video = '<embed wmode="opaque" src="http://blip.tv/play/hZ4ygcbWJgA" type="application/x-shockwave-flash" width="560" height="345" allowscriptaccess="always" allowfullscreen="true"></embed>';
 
     // Build links.
     $links = array();
@@ -159,77 +151,7 @@ function _atrium_block_create() {
       $links["{$type}"] = $menu_item;
     }
   }
-  $query = "SELECT nid FROM node where type = 'group'";
-  $result = db_query($query);
-  $unset_links = false;
-  $arg = arg(0);
-  if ($arg != 'admin'){
-    $unset_links = true;
-    $unset_quizlet = true;
-    $unset_piratepad = true;
-  }
-  while ($current_node = db_fetch_array($result)){
-    $node = node_load($current_node['nid']);
-    //Check if this page is page this group
-    if (strstr(str_replace('/','',$_SERVER['REQUEST_URI']), $node->purl)){
-      $value = db_fetch_array(db_query("SELECT value FROM {spaces_overrides} WHERE id = %d AND object_id = '%s'",$current_node['nid'], 'spaces_features'));
-      if ($value){
-        $spaces_features = unserialize($value['value']);
-        if($spaces_features['atrium_quizlet']){
-          $unset_quizlet = false;
-        }
-        else {
-          $unset_quizlet = true;
-        }
-/* Unset PiratePad Feature */
-       if($spaces_features['atriumed_piratepad']){
-          $unset_piratepad = false;
-        }
-        else {
-          $unset_piratepad = true;
-        }
-      }
-      else if($node->og_private){
-        $name = 'atrium_groups_private';
-      }
-      else {
-        $name = 'atrium_groups_public';
-      }
-      if ($name){
-        $val = db_fetch_array(db_query("SELECT value FROM {spaces_presets} WHERE name = '%s'", $name));
-      }
-      if ($val){
-        $spaces_features = unserialize($val['value']);
-        if($spaces_features['variable']['spaces_features']['atrium_quizlet']){
-          $unset_quizlet = false;
-        }
-        else {
-          $unset_quizlet = true;
-        }
-/* Unset PiratePad Feature */
-       if($spaces_features['variable']['spaces_features']['atriumed_piratepad']){
-          $unset_piratepad = false;
-        }
-        else {
-          $unset_piratepad = true;
-        }
-
-      }
-       //$unset_links = false;
-    }
-  }
-  if ($unset_links){
-    if($unset_quizlet){
-      drupal_add_js(drupal_get_path('module', 'atrium') . '/atrium_remove_quizlet.js');
-      unset($links['quizlet']);
-    }
-/* Unset PiratePad Feature */
-    if($unset_piratepad){
-      drupal_add_js(drupal_get_path('module', 'atrium') . '/atrium_remove_piratepad.js');
-      unset($links['piratepad']);
-    }
-  }
-   ksort($links);
+  ksort($links);
   return array('subject' => "<span class='icon'></span> {$item['title']}", 'content' => theme('links', $links));
 }
 
